@@ -13,26 +13,25 @@
         player1score, 
         player2score,        
         player1name, 
-        player2name,
-        makeID = function(callback) {
+        player2name
+
+         function makeID(callback) {
             console.log('makeID');
             var ID = Math.floor(Math.random() * 9999);
             checkIfGame(ID);
             
-        },
-        setPlayer1= function(name){
+        };
+        function setPlayer1f(name){
             player1name = name;
             currentPlayer = name;
-        },
-        setPlayer2 = function(name){
+        };
+
+         function setPlayer2(name){
             player2name = name;
             currentPlayer = name;
-        },
-        checkIfGame = function(ID) {
+        };
+        function checkIfGame(ID) {
             console.log('checkIfGame');
-
-
-
 
                 url: "https://dweet.io/get/dweets/for/" + ID + ".json",
              
@@ -60,8 +59,8 @@
                 console.log("error: " + error)
                 }
             });            
-        },
-        buildGame = function(ID) {
+        };
+        function buildGame(ID) {
             console.log('buildGame');
             if (!ID) {
                 makeID();
@@ -71,11 +70,11 @@
             gameID = ID;
             updateThing({startedGame:true});
 
-        },
-               getGameID = function(){
+        };
+        function getGameID(){
             return gameID;
-        },
-        getGame = function(myID) {
+        };
+        function getGame(myID) {
 
            $.ajax({
                 url: "https://dweet.io/get/latest/dweet/for/" + myID + ".json",
@@ -100,14 +99,14 @@
                     console.log("error: " + error);
                 }
             });
-        },
-        startGame = function() {
+        };
+        function startGame() {
             //getscore
             fight(function(score){
                 updateThing({score:score, player: currentPlayer});
             });
-        },
-        updateThing = function(content){
+        };
+        function updateThing(content){
             $.ajax({
                 url: "https://dweet.io/get/latest/dweet/for/" + gameID + ".json",
              
@@ -132,11 +131,4 @@
                 }
             });
             //fight with callback send string
-        }
-               PAIRING = {};
-               
-        PAIRING.buildGame = buildGame;
-        PAIRING.getGame: getGame;
-        PAIRING.updateThing: updateThing;
-               PAIRING.getGameID: getGameID;
-    };
+        };
