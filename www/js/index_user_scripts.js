@@ -5,9 +5,23 @@
  /*
    hook up event handlers 
  */
+    
+
+
  function register_event_handlers()
  {
     
+  $('#fight').on('click', function () {
+    var $btn = $(this).hide();
+      $("#page1").hide();
+      $("#page2").show();
+  })
+    
+  $('#join').on('click', function () {
+    var $btn = $(this).hide();
+      $("#page1").hide();
+      $("#page3").show();
+  })
     
      /* button  FIGHT */
     $(document).on("click", ".uib_w_1", function(evt)

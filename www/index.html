@@ -37,6 +37,8 @@
 
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+    <link rel="stylesheet" type="text/css" href="css/code_main.less.css" class="main-less">
+    <link rel="stylesheet" type="text/css" href="css/code_enter_main.less.css" class="main-less">
 
         <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
@@ -70,12 +72,30 @@
         <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        
+<div id="page1">
         <div class="upage vertical-col left" id="mainpage">
-            <button class="btn widget uib_w_1 d-margins btn-lg btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1">FIGHT</button>
-            <button class="btn widget uib_w_2 d-margins btn-lg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1">JOIN</button>
+            <button class="btn widget uib_w_1 d-margins button_height btn-lg btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="fight">FIGHT</button>
+            <button class="btn widget uib_w_2 d-margins btn-lg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="join">JOIN</button>
         </div>
-        <div class="upage vertical-col left hidden" id="code"></div>
-        <div class="upage vertical-col left hidden" id="code_enter"></div>
+        </div>
+    <div class="upage vertical-col left" id="page2" style="display:none;">
+      <div class="widget uib_w_1 d-margins div_number num_text" data-uib="media/text" data-ver="0">
+        <div class="widget-container left-receptacle"></div>
+        <div class="widget-container right-receptacle"></div>
+        <div>
+          <p>639</p>
+        </div>
+      </div>
+      <button class="btn widget uib_w_2 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Continue</button>
+    </div>
+        <div class="upage vertical-col left" id="page3" style="display:none;">
+      <div class="table-thing widget uib_w_1 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+        <label class="narrow-control"></label>
+        <textarea rows="1" class="wide-control form-control" wrap="soft" placeholder="Enter code to join"></textarea>
+      </div>
+      <button class="btn widget uib_w_2 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Continue</button>
+    </div>
     </body>
 
 </html>
