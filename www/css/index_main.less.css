@@ -313,3 +313,33 @@ body#afui .splt {
     margin-bottom: 6px;
   }
 }
+.btn-xlg {
+  padding: 38px 28px;
+  font-size: 22px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+@media all {
+  .txt-xlg p {
+    font-size: 60px;
+    font-weight: bold;
+    color: #000000;
+    font-family: sans-serif;
+  }
+}
+.left-receptacle {
+  float: left;
+}
+.right-receptacle {
+  float: right;
+}
+[data-uib="media/text"] p:first-of-type {
+  margin-top: 0px;
+}
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}

@@ -2,9 +2,9 @@
   "project": {
     "projectSettingsVersion": "2.0.0",
     "creationData": {
-	  "type": "App Designer",
-      "projectTypeName": "com.intel.xdk.projecttype.jsapp",
-      "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
+	  "type":"App Designer",
+      "projectTypeName": "com.intel.xdk.projecttype.webapp",
+      "src": "webapp/template-blank/sample.zip",
       "projectGuid": "ee43772a-283a-4845-b06d-38aa5e67525a",
       "lastModifiedDate": 1447445235232,
       "creationDate": 1447445211262
@@ -69,12 +69,11 @@
         "name": "Splashscreen",
         "description": "Cordova Splashscreen Plugin",
         "checksum": "170efb68"
-      }
-    ],
+      }],
     "buildConfigurations": {
       "Android-Crosswalk": {
         "platform_": "android",
-        "runtime_": "Crosswalk with Cordova 3.x",
+        "runtime_": "W3C on Crosswalk",
         "name_": "Android-Crosswalk",
         "preferences_": {
           "android-minSdkVersion": "14",
@@ -83,7 +82,7 @@
         },
         "isActive_": true,
         "appName_": "duel",
-        "appID_": "xdk.intel.blank.ad.template.crosswalk",
+        "appID_": "xdk.intel.blank.template.crosswalk",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -96,16 +95,17 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "iosProvs_": [],
         "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "15",
         "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps.",
         "appVersionCode_": "1"
       },
       "Android": {
         "platform_": "android",
-        "runtime_": "Cordova 3.x",
+        "runtime_": "W3C on Cordova",
         "name_": "Android",
         "preferences_": {
           "android-minSdkVersion": "14",
@@ -114,37 +114,7 @@
         },
         "isActive_": true,
         "appName_": "duel",
-        "appID_": "xdk.intel.blank.ad.template",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
-        "icons_": [],
-        "splashes_": [],
-        "addlPermissions_": "",
-        "excludedLibraries_": "",
-        "cordovaCLIVersion_": "5.1.1",
-        "crosswalkVersion_": "14",
-        "appVersion_": "0.0.1",
-        "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
-        "appVersionCode_": "1"
-      },
-      "iOS": {
-        "platform_": "ios",
-        "runtime_": "Cordova 3.x",
-        "name_": "iOS",
-        "preferences_": {
-          "ios-target": "6",
-          "ios-configuration": "adhoc"
-        },
-        "isActive_": true,
-        "appName_": "duel",
-        "appID_": "xdk.intel.blank.ad.template",
+        "appID_": "xdk.intel.blank.template",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -162,11 +132,42 @@
         "crosswalkVersion_": "14",
         "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps.",
+        "appVersionCode_": "1"
+      },
+      "iOS": {
+        "platform_": "ios",
+        "runtime_": "W3C on Cordova",
+        "name_": "iOS",
+        "preferences_": {
+          "ios-target": "6",
+          "ios-configuration": "adhoc"
+        },
+        "isActive_": true,
+        "appName_": "duel",
+        "appID_": "xdk.intel.blank.template",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "iosProvs_": [],
+        "cordovaCLIVersion_": "5.1.1",
+        "crosswalkVersion_": "14",
+        "appVersion_": "0.0.1",
+        "appAuthor_": "Intel XDK",
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps."
       },
       "Windows8": {
         "platform_": "windows8",
-        "runtime_": "Cordova 3.x",
+        "runtime_": "W3C on Cordova",
         "name_": "Windows8",
         "preferences_": {
           "windows-publisher-display-name": "",
@@ -174,7 +175,7 @@
         },
         "isActive_": true,
         "appName_": "duel",
-        "appID_": "xdk.intel.blank.ad.template",
+        "appID_": "xdk.intel.blank.template",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -187,20 +188,21 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "iosProvs_": [],
         "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "14",
         "appVersion_": "0.0.0.1",
         "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps."
       },
       "WebApp": {
         "platform_": "webapp",
         "runtime_": "W3C",
         "name_": "WebApp",
         "preferences_": {},
-        "isActive_": false,
+        "isActive_": true,
         "appName_": "duel",
-        "appID_": "not.yet.specified",
+        "appID_": "xdk.intel.blank.template",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -213,17 +215,18 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps."
       },
       "Chrome": {
         "platform_": "chromeos",
         "runtime_": "W3C on Chrome OS",
         "name_": "Chrome",
         "preferences_": {},
-        "isActive_": false,
+        "isActive_": true,
         "appName_": "duel",
-        "appID_": "not.yet.specified",
+        "appID_": "xdk.intel.blank.template",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -236,17 +239,18 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps."
       },
       "Firefox": {
         "platform_": "firefoxos",
         "runtime_": "W3C on Firefox OS",
         "name_": "Firefox",
         "preferences_": {},
-        "isActive_": false,
+        "isActive_": true,
         "appName_": "duel",
-        "appID_": "not.yet.specified",
+        "appID_": "xdk.intel.blank.template",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -259,17 +263,18 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps."
       },
       "Facebook": {
         "platform_": "facebook",
         "runtime_": "W3C on Facebook",
         "name_": "Facebook",
         "preferences_": {},
-        "isActive_": false,
+        "isActive_": true,
         "appName_": "duel",
-        "appID_": "not.yet.specified",
+        "appID_": "xdk.intel.blank.template",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -282,12 +287,13 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appDescription_": "Use this template to start with a simple index.html file for creating mobile web apps."
       },
       "WP81": {
         "platform_": "wp81",
-        "runtime_": "Cordova 3.x",
+        "runtime_": "W3C on Cordova",
         "name_": "WP81",
         "preferences_": {},
         "isActive_": true,
@@ -295,9 +301,7 @@
         "appID_": "not.yet.specified",
         "appAccess_": {
           "mode": "legacy",
-          "network": [
-            "*"
-          ],
+          "network": [],
           "intents": [],
           "navigation": []
         },
@@ -306,8 +310,7 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.0.1",
-        "cordovaCLIVersion_": "5.1.1",
-        "appAuthor_": "Intel XDK"
+        "cordovaCLIVersion_": "5.1.1"
       }
     },
     "gameAssetDirectory": "asset",
