@@ -1,7 +1,6 @@
 /*jshint browser:true */
 /*global $ */(function()
 {
- "use strict";
  /*
    hook up event handlers 
  */
@@ -74,10 +73,12 @@ function fight(callback) {
  function register_event_handlers()
  {
     
-  $('#fight').on('click', function () {
+  $('#fighterfight').on('click', function () {
     var $btn = $(this).hide();
+      PAIRING.buildGame();
       $("#page1").hide();
       $("#page2").show();
+      //$("#gameiddisplay").innerHTML(PAIRING.getGameID())
   })
     
   $('#join').on('click', function () {
@@ -99,25 +100,19 @@ function fight(callback) {
   })
   $('#readytofight').on('click', function () {
     var $btn = $(this).hide();
+      PAIRING.setPlayer1($("#txtPlayer1Name").val())
       $("#pageplayer1").hide();
       $("#countdown3").show();
       setTimeout(countdown3, 1000);
   })
+  $('#readytofight2').on('click', function () {
+    var $btn = $(this).hide();
+      PAIRING.setPlayer2($("#txtPlayer2Name").val())
+      $("#pageplayer2").hide();
+      $("#countdown3").show();
+      setTimeout(countdown3, 1000);
+  })
    
-    
-     /* button  FIGHT */
-    $(document).on("click", ".uib_w_1", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#code"); 
-    });
-    
-        /* button  JOIN */
-    $(document).on("click", ".uib_w_2", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#code_enter"); 
-    });
     
     }
  document.addEventListener("app.Ready", register_event_handlers, false);

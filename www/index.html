@@ -64,6 +64,7 @@
     <script src="xdk/init-dev.js"></script>
     <!-- normalizes device and document ready events, see file for details -->
     <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="js/pairing.js"></script>
     <script type="application/javascript" src="js/index_user_scripts.js"></script>
     <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
   </head>
@@ -75,7 +76,7 @@
 
     <div id="page1">
       <div class="upage vertical-col left" id="mainpage">
-        <button class="btn widget uib_w_1 d-margins button_height btn-lg btn-danger btn-xlg" data-uib="twitter%20bootstrap/button" data-ver="1" id="fight">FIGHT</button>
+        <button class="btn widget uib_w_1 d-margins button_height btn-lg btn-danger btn-xlg" data-uib="twitter%20bootstrap/button" data-ver="1" id="fighterfight">FIIGHT</button>
         <button class="btn widget uib_w_2 d-margins btn-lg btn-primary btn-xlg" data-uib="twitter%20bootstrap/button" data-ver="1" id="join">JOIN</button>
       </div>
     </div>
@@ -84,7 +85,7 @@
         <div class="widget-container left-receptacle"></div>
         <div class="widget-container right-receptacle"></div>
         <div>
-          <p>639</p>
+          <p id="gameiddisplay">639</p>
         </div>
       </div>
       <button class="btn widget uib_w_2 d-margins btn-xlg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="player1continue">Continue</button>
@@ -99,13 +100,13 @@
     <div class="upage vertical-col left" id="pageplayer1" style="display:none;">
       <div class="table-thing widget uib_w_1 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
         <label class="narrow-control"></label>
-        <textarea rows="1" class="wide-control form-control" wrap="soft" placeholder="Enter your name"></textarea>
+        <textarea id="txtPlayer1Name" rows="1" class="wide-control form-control" wrap="soft" placeholder="Enter your name"></textarea>
       </div>
       <div class="widget uib_w_3" data-uib="media/text" data-ver="0">
         <div class="widget-container left-receptacle"></div>
         <div class="widget-container right-receptacle"></div>
         <div>
-          <p>Wait for player 2 before fighting</p>
+          <p style="diplay:none;">Wait for player 2 before fighting</p>
         </div>
       </div>
       <button class="btn widget uib_w_2 d-margins btn-warning btn-xlg" data-uib="twitter%20bootstrap/button" id="readytofight" data-ver="1">FIGHT!</button>
@@ -113,7 +114,7 @@
     <div class="upage vertical-col left" id="pageplayer2" style="display:none;">
       <div class="table-thing widget uib_w_1 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1" id="pageplayer2">
         <label class="narrow-control"></label>
-        <textarea rows="1" class="wide-control form-control" wrap="soft" placeholder="Enter your name"></textarea>
+        <textarea id="txtPlayer2Name" rows="1" class="wide-control form-control" wrap="soft" placeholder="Enter your name"></textarea>
       </div>
 
       <div class="widget uib_w_4" data-uib="media/text" data-ver="0">
@@ -122,6 +123,7 @@
         <div>
           <p>Let player 1 know you're ready.</p>
         </div>
+      <button class="btn widget uib_w_2 d-margins btn-warning btn-xlg" data-uib="twitter%20bootstrap/button" id="readytofight2" data-ver="1">Ready!</button>
       </div>
     </div>
 
