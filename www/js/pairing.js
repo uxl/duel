@@ -8,31 +8,69 @@
 
 'use strict';
 
-var QUIZ = (function($) {
+var PAIRING = (function($) {
     //vars
     var questionNumber = 8,
         completed = false,
-        var init = function() {
+        makeID = function(callback) {
+            console.log('makeID');
+            var ID = Math.floor(Math.random() * 9999);
+            checkIfGame(ID);
+            
+        },
+        checkIfGame = function(ID) {
+            console.log('checkIfGame');
             $.ajax({
-                url: "https://dweet.io/dweet/for/" + makeId + ".json",
+                url: "https://dweet.io/get/dweets/for/" + ID + ".json",
                 method: 'GET'
             }).done(function(data) {
-                    console.log(data['card_number']);
-                    if (data['card_number'] == cardNo) {
-                        $("#kiosk").carousel(3);
-                        $('.errors').append("<p class=\"text-danger\">Your card has already been registered.</p>");
-                        console.log("repeat card");
-                    } else {
-                        console.log("new card")
-                    }
+                if (data.with == 404) {
+                    //show the button to move to 
+                    buildGame(ID);
+                } else {
+                    buildGame();
                 }
-
-            },
-            var makeID = function() {
-                return Math.floor(Math.random() * 9999);
+            }).fail(function(data, textStatus, errorThrown) {
+                console.log("error: " + error)
+            });
+        },
+        buildGame = function(ID) {
+            console.log('buildGame');
+            if (!ID) {
+                makeID();
+                return;
             };
+            console.log('buildGame: ' + ID)
+            $.ajax({
+                url: "https://dweet.io/dweet/for/" + ID + ".json",
+                method: 'POST'
+            }).done(function(data) {
+                $('body').append("me: " + JSON.stringify(data));
+
+            }).fail(function(data, textStatus, errorThrown) {
+                console.log("error: " + error)
+            });
+
+        },
+        getGame = function(myID) {
+            $.ajax({
+                url: "https://dweet.io/get/latest/dweet/for/" + myID + ".json",
+                method: 'GET'
+            }).done(function(data) {
+                $('body').append("return: " + JSON.stringify(data));
+            }).fail(function(data, textStatus, errorThrown) {
+                console.log("error: " + error)
+            });
+        },
+        winner = function(player1, player2) {
+
         }
     return {
-        init: init
+        buildGame: buildGame,
+        getGame: getGame
     };
 }(jQuery));
+$(function() {
+    PAIRING.buildGame();
+    //PAIRING.getGame(9866);
+});
