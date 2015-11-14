@@ -39,7 +39,7 @@ var PAIRING = (function($) {
              
                 // Work with the response
                 success: function( response ) {
-                     if (data.with == 404) {
+                     if (response.with == 404) {
                     //show the button to move to 
                     buildGame(ID);
                 } else {
