@@ -37,9 +37,6 @@ var PAIRING = (function($) {
 
                 method: 'GET',
              
-                // Tell YQL what we want and that we want JSON
-                data: {content:content},
-             
                 // Work with the response
                 success: function( response ) {
                      if (data.with == 404) {
@@ -77,9 +74,6 @@ var PAIRING = (function($) {
                 dataType: "jsonp",
 
                 method: 'GET',
-             
-                // Tell YQL what we want and that we want JSON
-                data: {content:content},
              
                 // Work with the response
                 success: function( response ) {
