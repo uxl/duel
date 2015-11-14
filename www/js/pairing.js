@@ -1,37 +1,31 @@
-/* global console, jQuery, $, TrackGA */
-// Quiz logic - question types and scoring
-// Mullen - Wilkinson 2015
+'use strict';
 
-//todo:
-// share http://share.humankinda.com/1.html, 2.html, 3.html  - > 10.html
-// api: score
-
-
+var PAIRING = (function($) {
     //vars
     var gameID = null,
         currentPlayer = null,
         player1score, 
         player2score,        
         player1name, 
-        player2name
-
-         function makeID(callback) {
+        player2name,
+        makeID = function(callback) {
             console.log('makeID');
             var ID = Math.floor(Math.random() * 9999);
             checkIfGame(ID);
             
-        };
-        function setPlayer1f(name){
+        },
+        setPlayer1= function(name){
             player1name = name;
             currentPlayer = name;
-        };
-
-         function setPlayer2(name){
+        },
+        setPlayer2 = function(name){
             player2name = name;
             currentPlayer = name;
-        };
-        function checkIfGame(ID) {
+        },
+        checkIfGame = function(ID) {
             console.log('checkIfGame');
+
+           $.ajax({
 
                 url: "https://dweet.io/get/dweets/for/" + ID + ".json",
              
@@ -59,8 +53,8 @@
                 console.log("error: " + error)
                 }
             });            
-        };
-        function buildGame(ID) {
+        },
+        buildGame = function(ID) {
             console.log('buildGame');
             if (!ID) {
                 makeID();
@@ -70,11 +64,8 @@
             gameID = ID;
             updateThing({startedGame:true});
 
-        };
-        function getGameID(){
-            return gameID;
-        };
-        function getGame(myID) {
+        },
+        getGame = function(myID) {
 
            $.ajax({
                 url: "https://dweet.io/get/latest/dweet/for/" + myID + ".json",
@@ -99,14 +90,17 @@
                     console.log("error: " + error);
                 }
             });
-        };
-        function startGame() {
+        },
+        startGame = function() {
             //getscore
             fight(function(score){
                 updateThing({score:score, player: currentPlayer});
             });
-        };
-        function updateThing(content){
+        },
+        getGameID = function(){
+            return gameID;
+        },
+        updateThing = function(content){
             $.ajax({
                 url: "https://dweet.io/get/latest/dweet/for/" + gameID + ".json",
              
@@ -131,4 +125,11 @@
                 }
             });
             //fight with callback send string
-        };
+        }
+    return {
+        buildGame: buildGame,
+        getGame: getGame,
+        updateThing: updateThing,
+        getGameID: getGameID
+    };
+}(jQuery));
